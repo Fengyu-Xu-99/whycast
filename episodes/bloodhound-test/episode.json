@@ -1,0 +1,65 @@
+{
+  "id": "bloodhound-test",
+  "title": "Why do bloodhounds look like that?",
+  "status": "audio-draft",
+  "createdAt": "2026-06-25",
+  "currentStep": "Review audio draft",
+  "tts": {
+    "engine": "edge-tts",
+    "voice": "zh-CN-YunyangNeural",
+    "rate": "-4%"
+  },
+  "files": {
+    "seed": "episode-brief.md",
+    "curiosityTree": "curiosity-tree.md",
+    "selectedPath": "selected-path.md",
+    "script": "script-audio-v1.md",
+    "ttsInput": "audio-sample-v1.txt",
+    "reviewNotes": "review-notes.md",
+    "decisionLog": "audio-notes.md"
+  },
+  "audio": [
+    {
+      "label": "V1.C1 Opening and body",
+      "path": "../../output/speech/bloodhound-full-v1/chunk-01-opening-and-body.mp3",
+      "sourceText": "script-audio-v1.md",
+      "createdAt": "2026-06-30"
+    },
+    {
+      "label": "V1.C2 Smell world",
+      "path": "../../output/speech/bloodhound-full-v1/chunk-02-smell-world.mp3",
+      "sourceText": "script-audio-v1.md",
+      "createdAt": "2026-06-30"
+    },
+    {
+      "label": "V1.C3 Nose and tracking",
+      "path": "../../output/speech/bloodhound-full-v1/chunk-03-nose-and-tracking.mp3",
+      "sourceText": "script-audio-v1.md",
+      "createdAt": "2026-06-30"
+    },
+    {
+      "label": "V1.C4 Bloodhound ranking",
+      "path": "../../output/speech/bloodhound-full-v1/chunk-04-bloodhound-ranking.mp3",
+      "sourceText": "script-audio-v1.md",
+      "createdAt": "2026-06-30"
+    },
+    {
+      "label": "V1.C5 Scent hounds",
+      "path": "../../output/speech/bloodhound-full-v1/chunk-05-scent-hounds.mp3",
+      "sourceText": "script-audio-v1.md",
+      "createdAt": "2026-06-30"
+    },
+    {
+      "label": "V1.C6 Scent vs sight hounds",
+      "path": "../../output/speech/bloodhound-full-v1/chunk-06-scent-vs-sight-hounds.mp3",
+      "sourceText": "script-audio-v1.md",
+      "createdAt": "2026-06-30"
+    },
+    {
+      "label": "V1.C7 Ending",
+      "path": "../../output/speech/bloodhound-full-v1/chunk-07-ending.mp3",
+      "sourceText": "script-audio-v1.md",
+      "createdAt": "2026-06-30"
+    }
+  ]
+}

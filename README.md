@@ -26,6 +26,8 @@ The MVP is not a generic chatbot. It is a thinking partner for organizing curios
 
 - [VISION.md](./VISION.md) - North Star for the project.
 - [PROJECT_SPEC.md](./PROJECT_SPEC.md) - MVP scope, backlog, and acceptance criteria.
+- [APP_ARCHITECTURE.md](./APP_ARCHITECTURE.md) - App/platform direction and architecture plan.
+- [WHYCAST_STUDIO_V0_SPEC.md](./WHYCAST_STUDIO_V0_SPEC.md) - Local Studio v0 execution spec.
 - [ROADMAP.md](./ROADMAP.md) - Development phases.
 - [SPRINT_PLAN.md](./SPRINT_PLAN.md) - Near-term sprint plan.
 - [CHANGELOG.md](./CHANGELOG.md) - Change history and decision log.

@@ -1,6 +1,6 @@
 # Bloodhound Audio Notes
 
-Status: ready for first audio sample.
+Status: full audio draft generated.
 
 ## Goal
 
@@ -14,24 +14,25 @@ The first sample should test:
 - whether mixed Chinese and English sounds distracting
 - whether the voice feels like a calm knowledge explainer
 
-## Recommended Voice Setup
+## Selected Voice Setup
 
-- Model: `gpt-4o-mini-tts-2025-12-15`
-- Voice: `cedar`
+- Tool: `edge-tts`
+- Voice: `zh-CN-YunyangNeural`
 - Format: `mp3`
-- Speed: `1.0`
+- Rate: `-4%`
 
-Instructions:
+Selected sample:
 
 ```text
-Voice Affect: Warm, composed, and curious.
-Tone: Natural Mandarin explainer, friendly but knowledge-first.
-Pacing: Steady and moderate, not dramatic.
-Emotion: Quiet fascination, like explaining something genuinely interesting.
-Pronunciation: Keep English breed names clear and slightly slower the first time.
-Pauses: Brief pause after section headings and important questions.
-Delivery: Conversational, not like reading a school essay.
+output/speech/bloodhound-sample-v1-edge-yunyang-rate-minus4.mp3
 ```
+
+Notes:
+
+- Apple `say` sounded unusably robotic.
+- ElevenLabs was worse than expected for this Mandarin sample.
+- Edge `zh-CN-YunyangNeural` was the best free test voice so far.
+- `--rate=-8%` was a little too slow; `--rate=-4%` is the current preferred speed.
 
 ## First Sample Text
 
@@ -46,7 +47,7 @@ Target length:
 Suggested output:
 
 ```text
-output/speech/bloodhound-sample-v1.mp3
+output/speech/bloodhound-sample-v1-edge-yunyang-rate-minus4.mp3
 ```
 
 Sample input files:
@@ -60,34 +61,41 @@ Command:
 
 ```bash
 mkdir -p output/speech
-python3 /Users/fengyu/.codex/skills/speech/scripts/text_to_speech.py speak \
-  --input-file episodes/bloodhound-test/audio-sample-v1.txt \
-  --instructions-file episodes/bloodhound-test/tts-instructions-v1.txt \
-  --voice cedar \
-  --response-format mp3 \
-  --out output/speech/bloodhound-sample-v1.mp3
+/private/tmp/edge-tts-venv/bin/edge-tts \
+  --voice zh-CN-YunyangNeural \
+  --rate=-4% \
+  --file episodes/bloodhound-test/audio-sample-v1.txt \
+  --write-media output/speech/bloodhound-sample-v1-edge-yunyang-rate-minus4.mp3
 ```
 
 Environment note:
 
-- `OPENAI_API_KEY` must be set before running the live command.
-- This workspace uses `python3`, not `python`.
+- `edge-tts` is installed in `/private/tmp/edge-tts-venv`.
+- No API key is required for Edge TTS.
 
 ## Full Episode Plan
 
-The full script is longer than the single-request TTS limit, so full audio should be generated in chunks.
+The full script was generated in chunks with Edge TTS `zh-CN-YunyangNeural` at `--rate=-4%`.
 
-Recommended chunking:
+Output directory:
 
-- `chunk-01-opening-and-body.mp3`
-- `chunk-02-smell-world.mp3`
-- `chunk-03-nose-and-tracking.mp3`
-- `chunk-04-bloodhound-ranking.mp3`
-- `chunk-05-scent-hounds.mp3`
-- `chunk-06-sight-hounds.mp3`
-- `chunk-07-ending.mp3`
+```text
+output/speech/bloodhound-full-v1/
+```
 
-Later, decide whether to stitch the chunks into one file or keep them separate for review.
+Generated chunks:
+
+- `chunk-01-opening-and-body.mp3` — about 3:58
+- `chunk-02-smell-world.mp3` — about 2:17
+- `chunk-03-nose-and-tracking.mp3` — about 2:20
+- `chunk-04-bloodhound-ranking.mp3` — about 2:00
+- `chunk-05-scent-hounds.mp3` — about 4:01
+- `chunk-06-scent-vs-sight-hounds.mp3` — about 4:56
+- `chunk-07-ending.mp3` — about 3:17
+
+Total draft length: about 22:50.
+
+Later, decide whether to stitch the chunks into one file or revise the script first.
 
 ## Review Checklist
 
